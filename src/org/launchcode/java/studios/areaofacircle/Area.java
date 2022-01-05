@@ -7,9 +7,9 @@ public class Area {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter radius of circle:");
         Double radius;
-//        Double PI = 3.14159265359;
-//        Double area = PI * radius * radius;
-//        System.out.println("Radius is: " + radius + " Area is: " + area);
+        //        Double PI = 3.14159265359;
+        //        Double area = PI * radius * radius;
+        //        System.out.println("Radius is: " + radius + " Area is: " + area);
         //radius= input.nextDouble();
 
         if (input.hasNextDouble()){
@@ -27,7 +27,7 @@ public class Area {
 
 
 
-    }
+}
 
 
 
