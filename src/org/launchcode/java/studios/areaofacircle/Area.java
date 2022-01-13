@@ -12,16 +12,20 @@ public class Area {
         //        System.out.println("Radius is: " + radius + " Area is: " + area);
         //radius= input.nextDouble();
 
-        if (input.hasNextDouble()){
-            radius = input.nextDouble();
-            if (radius>0){
+
+
+            if (input.hasNextDouble()) {
+                radius = input.nextDouble();
+                while (radius < 0 ){
+                    System.out.println("Please Do not enter a negative number. Scanner is open for retry:");
+                    radius = input.nextDouble();
+                }
                 System.out.println("The area of a circle of radius " + radius + " is " + Circle.getArea(radius));
             } else {
-                System.out.println(radius + " is not a valid number!");
+                System.out.println("Not a valid number. Restart to retry");
+                while (input.hasNextDouble());
             }
-        } else {
-            System.out.println("Please enter a valid number!");
-        }
+
 
     }
 
