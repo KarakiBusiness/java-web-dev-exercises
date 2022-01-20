@@ -28,17 +28,53 @@ public class Student {
         return (this.name + " has a GPA of: " + this.gpa);
     }
 
-
-     //TODO: Uncomment and complete the getGradeLevel method here:
-//    public String getGradeLevel() {
-//        // Determine the grade level of the student based on numberOfCredits
-//    }
+    public String getGradeLevel(int numberOfCredits) {
+        if (numberOfCredits<=29){
+            return new String ("Freshman");
+        }else if (numberOfCredits <= 59){
+            return new String ("Sophomore");
+        }else if ( numberOfCredits <=89 ){
+            return new String ("Junior");
+        }else{
+            return new String ("Senior");
+        }
+    }
 
     // TODO: Complete the addGrade method.
     public void addGrade(int courseCredits, double grade) {
         // Update the appropriate fields: numberOfCredits, gpa
+//        Double totalQualityScore = this.gpa * this.numberOfCredits;
+//        totalQualityScore += courseCredits * grade;
+//        this.numberOfCredits += courseCredits;
+//        this.gpa = totalQualityScore/numberOfCredits;
+        Double totalQualityScore = gpa * numberOfCredits;
+        totalQualityScore = totalQualityScore + (grade * courseCredits);
+        numberOfCredits = numberOfCredits + courseCredits;
+        gpa = totalQualityScore / numberOfCredits;
+
     }
 
+
+
+        public String toString(){
+        return ("Student: " + name + "\n" + "Student ID: " + studentId + "\n" + "Number of Credits: " + numberOfCredits + "\n" + "GPA: " + gpa);
+        }
+
+        public boolean equals(Student target){
+
+        if (target == this){
+                return true;
+        }
+        if (target.getClass() != getClass()){
+            return false;
+        }
+        if (target == null ){
+            return false;
+        }
+        Student theStudent = (Student)target;
+        return theStudent.getStudentId() == getStudentId();
+
+        }
     // TODO: Add your custom 'toString' method here. Make sure it returns a well-formatted String rather
     //  than just the class fields.
 
@@ -80,9 +116,9 @@ public class Student {
     public static void main(String[] args) {
         Student sally = new Student("Sally",1,1,4.0);
         System.out.println("The Student class works! " + sally.getName() + " is a student!");
-        System.out.println(sally);
+       // System.out.println(sally);
         sally.addGrade(12, 3.5);
-        System.out.println(sally);
+       // System.out.println(sally);
         sally.addGrade(25, 3.8);
         System.out.println(sally);
     }
