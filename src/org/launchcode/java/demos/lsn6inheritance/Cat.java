@@ -12,6 +12,9 @@ public class Cat {
     public Cat (double aWeight) {
         weight = aWeight;
     }
+    public Cat () {
+        weight = 13;
+    }
 
     /**** Getters and Setters ****/
 
@@ -53,12 +56,10 @@ public class Cat {
 
     // Eating makes a cat not hungry
     public void eat() {
-
         // eating when not hungry makes a cat sleepy
         if (!hungry) {
             tired = true;
         }
-
         hungry = false;
     }
 
